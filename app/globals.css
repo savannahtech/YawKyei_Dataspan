@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+
+.customSlider-track {
+  top: 8px;
+  height: 4px;
+  background: #ddd;
+  border-radius: 35px;
+}
+
+.customSlider-track.customSlider-track-0 {
+  background: rgba(255, 215, 92, 1);
+}
+
+.customSlider-thumb {
+  position: relative;
+  cursor: pointer;
+  background: rgba(255, 215, 92, 1);
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  outline: none;
+}
+
+.customSlider-thumb::before {
+  content: "";
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 50%;
+  height: 50%;
+  border-radius: 50%;
+  background-color: #fff;
+}
+
+.customSlider-mark {
+  cursor: pointer;
+  top: 6px;
+  width: 6px;
+  height: 8px;
+  border-radius: 35px;
+  background-color: #fff;
+}
+
+.scrollable-div::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.scrollable-div::-webkit-scrollbar-track {
+  background: rgba(209, 209, 214, 1);
+  border-radius: 25px;
+}
+
+/* Handle */
+.scrollable-div::-webkit-scrollbar-thumb {
+  background: #ffd75c;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.scrollable-div::-webkit-scrollbar-thumb:hover {
+  background: #ffd75c;
+}
+
+.pagination {
+  list-style: none;
+  height: 30.5px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 25px;
+  gap: 5px;
+}
+
+.active {
+  background-color: #ffd75c;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.page-item {
+  list-style: none;
+  padding: 2px 12px;
+  height: 31.5px;
+  width: 31.5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2px;
+}
+
+.next {
+  margin-left: 20px;
+}
+
+.next.disabled {
+  color: rgba(209, 209, 214, 1);
+}
+
+.previous {
+  margin-right: 20px;
+}
+
+.previous.disabled {
+  color: rgba(209, 209, 214, 1);
+}
