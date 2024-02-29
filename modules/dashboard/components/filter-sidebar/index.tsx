@@ -4,6 +4,7 @@ import ReactSlider from "react-slider";
 
 import ClassFilter from "../class-filter/class-filter";
 import { useAppData } from "@/lib/context";
+import { Filter } from "@/lib/types";
 
 const FilterSidebar = () => {
   const {
@@ -13,14 +14,53 @@ const FilterSidebar = () => {
     setPolygonRange,
   } = useAppData();
 
-  const classFilters = [
-    "Elbow positive",
-    "Fingers positive",
-    "Humerus",
-    "Forearm fracture",
-    "Humerus fracture",
-    "Shoulder fracture",
-    "Wrist positive",
+  const classFilters: Filter[] = [
+    {
+      color: "rgba(61, 155, 233)",
+      borderColor: "border-blue",
+      bgColor: "rgba(61, 155, 233, 0.2)",
+      label: "Elbow positive",
+    },
+    {
+      color: "rgba(186, 218, 85, 1)",
+      bgColor: "rgba(186, 218, 85, 0.2)",
+      borderColor: "border-green",
+      label: "Fingers positive",
+    },
+    {
+      color: "rgba(44, 225, 203, 1)",
+      bgColor: "rgba(44, 225, 203, 0.2)",
+      borderColor: "border-sea",
+      label: "Humerus",
+    },
+    {
+      color: "rgba(255, 215, 92, 1)",
+      bgColor: "rgba(255, 215, 92, 0.2)",
+      borderColor: "border-yellow",
+
+      label: "Forearm fracture",
+    },
+    {
+      color: "rgba(242, 88, 88, 1)",
+      bgColor: "rgba(242, 88, 88, 0.2)",
+      borderColor: "border-red",
+
+      label: "Humerus fracture",
+    },
+    {
+      color: "rgba(253, 176, 62, 1)",
+      bgColor: "rgba(253, 176, 62, 0.2)",
+      borderColor: "border-orange",
+
+      label: "Shoulder fracture",
+    },
+    {
+      color: "rgba(215, 131, 255, 1)",
+      bgColor: "rgba(215, 131, 255, 0.2)",
+      borderColor: "border-purple",
+
+      label: "Wrist positive",
+    },
   ];
 
   function handleDeselect() {
@@ -41,7 +81,7 @@ const FilterSidebar = () => {
   return (
     <div className="border rounded-md flex justify-center p-4 h-full">
       <div className="flex flex-col gap-8">
-        <div className="relative h-20">
+        <div className="relative h-[65px]">
           <Image
             src="/Logo.svg"
             alt="logo"
@@ -51,21 +91,21 @@ const FilterSidebar = () => {
         </div>
 
         <div className="flex flex-col gap-4">
-          <p className="font-bold">Classes filter</p>
+          <p className="font-bold text-[15px]">Classes filter</p>
 
           <div className="flex items-center gap-4 text-[12px]">
             <button
-              className={`${
-                !classSelected ? "text-blue-500" : "text-gray-400"
-              }`}
+              style={{
+                color: !classSelected ? "#2081D2" : "#D1D1D6",
+              }}
               onClick={() => handleSelectAll()}
             >
               Select all
             </button>
             <button
-              className={`${
-                classSelected ? "text-blue-500" : "text-gray-400 "
-              }`}
+              style={{
+                color: classSelected ? "#2081D2" : "#D1D1D6",
+              }}
               onClick={() => handleDeselect()}
             >
               Deselect all
@@ -78,7 +118,7 @@ const FilterSidebar = () => {
           />
 
           <div className="flex flex-col gap-4">
-            <p className="font-bold">Polygon range</p>
+            <p className="font-bold text-[15px]">Polygon range</p>
 
             <div className="flex justify-between">
               <p>

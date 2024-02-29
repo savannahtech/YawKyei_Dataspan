@@ -1,17 +1,17 @@
 "use client";
 
 import React, { createContext, useContext, useState } from "react";
-import { Record } from "../types";
+import { Filter, Record } from "../types";
 
 interface IAppContext {
   polygonRange: number;
-  selectedClassFilter: string[];
+  selectedClassFilter: Filter[];
   setPolygonRange: (value: number) => void;
   activeTotalCount: number;
   setActiveTotalCount: (count: number) => void;
   currentImagesPerPage: number;
   setCurrentImagesPerPage: (value: number) => void;
-  setSelectedClassFilter: (value: string[]) => void;
+  setSelectedClassFilter: (value: Filter[]) => void;
   currentImages: Record[] | null;
   setCurrentImages: (value: Record[]) => void;
 }
@@ -23,7 +23,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [polygonRange, setPolygonRange] = useState(0);
   const [activeTotalCount, setActiveTotalCount] = useState(0);
   const [currentImagesPerPage, setCurrentImagesPerPage] = useState(0);
-  const [selectedClassFilter, setSelectedClassFilter] = useState<string[]>([]);
+  const [selectedClassFilter, setSelectedClassFilter] = useState<Filter[]>([]);
 
   return (
     <AppContext.Provider

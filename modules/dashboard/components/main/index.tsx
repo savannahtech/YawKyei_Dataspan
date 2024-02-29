@@ -17,9 +17,9 @@ const Main = () => {
     <section className="py-4">
       <div className="mx-auto w-full max-w-screen-xl px-2.5 flex flex-col gap-12">
         <div className="flex justify-between">
-          <h1 className="font-bold text-3xl">Bone-fraction-detection</h1>
+          <h1 className="font-bold text-[32px]">Bone-fraction-detection</h1>
 
-          <p>
+          <p className="text-[18px]">
             <span className="font-bold">{currentImagesPerPage}</span> of{" "}
             <span className="font-bold">{activeTotalCount}</span> images
           </p>

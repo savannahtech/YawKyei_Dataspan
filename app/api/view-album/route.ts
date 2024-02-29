@@ -38,7 +38,6 @@ export async function GET() {
             .listObjects({ Prefix: albumPhotosKey + "valid/images" })
             .promise();
 
-        console.log(validImages)
 
         //labels
         let testLabels = await s3
@@ -79,10 +78,10 @@ export async function GET() {
         );
 
         return NextResponse.json({
-            allGroups: [...testData, ...trainData, ...validData],
-            test: testData,
-            train: trainData,
-            valid: validData,
+            "All groups": [...testData, ...trainData, ...validData],
+            Test: testData,
+            Train: trainData,
+            Valid: validData,
         });
     } catch (error: any) {
         return NextResponse.json({ error: error.message });

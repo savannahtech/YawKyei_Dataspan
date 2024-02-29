@@ -49,18 +49,22 @@ export default function ImagePreview({
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-8 text-left align-middle shadow-xl transition-all">
                   <div className="flex justify-between">
-                    <Dialog.Title
-                      as="h3"
-                      className="text-lg font-medium leading-6 text-gray-900"
-                    >
-                      {fileName}
-                    </Dialog.Title>
+                    <div className="flex-1">
+                      <Dialog.Title
+                        as="h3"
+                        className=" text-lg font-medium leading-6 text-gray-900"
+                      >
+                        {fileName}
+                      </Dialog.Title>
+                    </div>
 
-                    <button onClick={closeModal}>
-                      <span>x</span>
-                    </button>
+                    <div className="flex-[3]">
+                      <button onClick={closeModal}>
+                        <span>x</span>
+                      </button>
+                    </div>
                   </div>
                   <div className="mt-2">
                     <p>Details:</p>

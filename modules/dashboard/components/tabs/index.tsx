@@ -33,14 +33,14 @@ const BoneFractureTabs = ({ data, isLoading }: Props) => {
     <div className="w-full">
       {!isLoading && data ? (
         <Tab.Group>
-          <Tab.List className="flex space-x-1 border-b">
+          <Tab.List className="flex  border-b">
             {data &&
               Object.keys(data).map((type) => (
                 <Tab
                   key={type}
                   className={({ selected }) =>
                     classNames(
-                      "w-full py-2.5 text-sm font-medium leading-5",
+                      "px-[15px] py-[5px] text-sm font-medium leading-5",
                       selected
                         ? "bg-[#FFD75C1A] text-[#FFD75C] border-b border-[#FFD75C]"
                         : ""

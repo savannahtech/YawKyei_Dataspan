@@ -24,7 +24,7 @@ const TabPanelContent = ({
   }
 
   return (
-    <div className="h-[200px] border">
+    <div className="h-[100px] border">
       <div
         className="relative border h-full cursor-pointer"
         onClick={() =>

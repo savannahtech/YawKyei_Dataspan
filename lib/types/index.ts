@@ -12,3 +12,10 @@ export type FracturedImages = {
     train: Record[]
     valid: Record[]
 }
+
+export type Filter = {
+    color: string
+    borderColor: string
+    bgColor: string
+    label: string
+}
